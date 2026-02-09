@@ -139,6 +139,3 @@ src/main/kotlin/it/bertinetti/rainbowbrackets/
 | 50K-line file   | < 500ms           |
 | Selection update| < 2ms             |
 
-## License
-
-MIT License — see LICENSE file for details.
