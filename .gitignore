@@ -1,0 +1,72 @@
+# Gradle
+.gradle/
+build/
+
+# Gradle wrapper - keep the wrapper scripts and JAR committed, but ignore other wrapper cache
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ / JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# User-specific or workspace files
+# keep code style and other project metadata under version control if desired
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/shelf
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Kotlin
+kotlinDaemon/
+
+# Java
+out/
+*.class
+
+# Misc
+*.tmp
+*.swp
+*~
+
+# Test / coverage
+coverage/
+jacoco/
+
+# Build artifacts
+dist/
+release/
+
+# Plugin build artifacts
+build/distributions/
+
+# OS files
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Lock files
+dependency-reduced-pom.xml
+
+# Local IDE run configs (optional)
+.idea/runConfigurations/
+
+# Ignore local properties
+/local.properties
+
+# keep the Gradle wrapper properties and scripts but ignore other generated files
+gradlew
+gradlew.bat
+gradle/wrapper/
+
+# End
+
+# Project exclude paths
+/.intellijPlatform/

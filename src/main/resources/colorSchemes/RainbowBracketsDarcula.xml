@@ -1,0 +1,32 @@
+<list>
+    <option name="RAINBOW_BRACKETS_LEVEL_0">
+        <value>
+            <option name="FOREGROUND" value="ffd700"/>
+        </value>
+    </option>
+    <option name="RAINBOW_BRACKETS_LEVEL_1">
+        <value>
+            <option name="FOREGROUND" value="da70d6"/>
+        </value>
+    </option>
+    <option name="RAINBOW_BRACKETS_LEVEL_2">
+        <value>
+            <option name="FOREGROUND" value="179fff"/>
+        </value>
+    </option>
+    <option name="RAINBOW_BRACKETS_LEVEL_3">
+        <value>
+            <option name="FOREGROUND" value="ffd700"/>
+        </value>
+    </option>
+    <option name="RAINBOW_BRACKETS_LEVEL_4">
+        <value>
+            <option name="FOREGROUND" value="da70d6"/>
+        </value>
+    </option>
+    <option name="RAINBOW_BRACKETS_LEVEL_5">
+        <value>
+            <option name="FOREGROUND" value="179fff"/>
+        </value>
+    </option>
+</list>

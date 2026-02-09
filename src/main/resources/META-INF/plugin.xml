@@ -1,0 +1,65 @@
+<idea-plugin>
+    <id>it.paol0b.rainbowbrackets</id>
+    <name>Fast Rainbow Brackets</name>
+    <version>1.0.0</version>
+    <vendor url="https://github.com/paol0b">Paolo Bertinetti</vendor>
+
+    <description><![CDATA[
+        Colorize matching brackets, parentheses, and braces with rainbow colors
+        for improved code readability. Supports all JetBrains-supported languages.
+        <ul>
+            <li>6 cyclic rainbow colors for nested brackets</li>
+            <li>Supported delimiters: (), {}, [], &lt;&gt;, XML/HTML tags</li>
+            <li>Separate color palettes for Light and Dark themes</li>
+            <li>Selection block highlighting with translucent bracket colors</li>
+            <li>Configurable via Settings → Tools → Rainbow Brackets</li>
+        </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <ul>
+            <li>1.0.0 - Initial release</li>
+        </ul>
+    ]]></change-notes>
+
+    <idea-version since-build="251"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Rainbow Bracket Annotator — registered with language="" to cover ALL languages -->
+        <annotator language=""
+                   implementationClass="it.paol0b.rainbowbrackets.highlighting.RainbowBracketAnnotator"/>
+
+        <!-- Settings UI: Settings → Tools → Rainbow Brackets -->
+        <applicationConfigurable
+                parentId="tools"
+                id="it.paol0b.rainbowbrackets.settings"
+                displayName="Rainbow Brackets"
+                instance="it.paol0b.rainbowbrackets.settings.RainbowSettingsConfigurable"/>
+
+        <!-- Persistent settings state -->
+        <applicationService
+                serviceImplementation="it.paol0b.rainbowbrackets.settings.RainbowSettingsState"/>
+
+        <!-- Color settings page for scheme customization -->
+        <colorSettingsPage
+                implementation="it.paol0b.rainbowbrackets.colors.RainbowColorSettingsPage"/>
+
+        <!-- Additional text attributes for the color scheme -->
+        <additionalTextAttributes scheme="Default" file="colorSchemes/RainbowBracketsDefault.xml"/>
+        <additionalTextAttributes scheme="Darcula" file="colorSchemes/RainbowBracketsDarcula.xml"/>
+
+        <!-- Project-level services -->
+        <projectService
+                serviceImplementation="it.paol0b.rainbowbrackets.highlighting.RainbowHighlighterService"/>
+        <projectService
+                serviceImplementation="it.paol0b.rainbowbrackets.selection.SelectionBlockHighlighter"/>
+    </extensions>
+
+    <projectListeners>
+        <listener topic="com.intellij.openapi.editor.event.SelectionListener"
+                  class="it.paol0b.rainbowbrackets.selection.RainbowSelectionListener"/>
+    </projectListeners>
+</idea-plugin>
