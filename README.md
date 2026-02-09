@@ -5,7 +5,7 @@ with rainbow colors for improved code readability.
 
 **Author:** Paolo Bertinetti  
 **Version:** 1.0.0  
-**Compatibility:** JetBrains Platform 2026.1+
+**Compatibility:** JetBrains Platform 2025.1+
 
 ## Features
 
